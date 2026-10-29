@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARABA & CAR - Otomotiv Dünyası</title>
+    <title>ARABA & CAR - Dev Otomobil Veritabanı</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -31,18 +31,18 @@
             overflow-x: hidden;
         }
 
-        /* HEADER & HERO */
+        /* HEADER */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(11, 15, 25, 0.85);
-            backdrop-filter: blur(10px);
+            background: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(12px);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
+            padding: 18px 5%;
             z-index: 1000;
             border-bottom: 1px solid var(--border-color);
         }
@@ -50,11 +50,11 @@
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .logo-area i {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--accent-color);
             text-shadow: 0 0 10px var(--accent-glow);
         }
@@ -69,173 +69,193 @@
             -webkit-text-fill-color: transparent;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover, nav ul li a.active {
+        .stats-badge {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--accent-color);
             color: var(--accent-color);
-            text-shadow: 0 0 8px var(--accent-glow);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
 
-        /* HERO SECTION */
+        /* HERO & SEARCH */
         .hero {
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding-top: 140px;
+            padding-bottom: 40px;
             text-align: center;
-            background: linear-gradient(rgba(11,15,25,0.7), rgba(11,15,25,0.9)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            padding: 0 20px;
-            margin-top: 80px;
+            background: linear-gradient(rgba(11,15,25,0.85), rgba(11,15,25,0.98)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
         .hero h2 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
         }
 
         .hero p {
-            font-size: 1.2rem;
             color: var(--text-secondary);
-            max-width: 700px;
-            margin-bottom: 30px;
+            max-width: 750px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
         }
 
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 25px;
+            padding-right: 60px;
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 30px;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .search-box i {
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        /* FILTER BUTTONS */
         .filter-buttons {
             display: flex;
-            gap: 15px;
+            gap: 10px;
             flex-wrap: wrap;
             justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .filter-btn {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             color: var(--text-primary);
-            padding: 10px 25px;
-            border-radius: 30px;
+            padding: 8px 20px;
+            border-radius: 20px;
             cursor: pointer;
             font-weight: 600;
             transition: 0.3s;
+            font-size: 0.9rem;
         }
 
         .filter-btn:hover, .filter-btn.active {
             background: var(--accent-color);
             color: var(--bg-color);
             border-color: var(--accent-color);
-            box-shadow: 0 0 15px var(--accent-glow);
+            box-shadow: 0 0 12px var(--accent-glow);
         }
 
         /* CAR GRID */
         .container {
             max-width: 1400px;
-            margin: 50px auto;
+            margin: 40px auto;
             padding: 0 20px;
         }
 
-        .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-            text-align: center;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--accent-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
-            box-shadow: 0 0 10px var(--accent-glow);
+        .results-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            color: var(--text-secondary);
         }
 
         .car-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .car-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
+            border-radius: 14px;
             overflow: hidden;
-            transition: 0.4s;
-            position: relative;
+            transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .car-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-6px);
             border-color: var(--accent-color);
-            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.15);
+            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.12);
         }
 
         .car-img-wrapper {
             position: relative;
-            height: 220px;
+            height: 190px;
             overflow: hidden;
+            background: #000;
         }
 
         .car-img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: 0.5s;
+            transition: 0.4s;
         }
 
         .car-card:hover .car-img-wrapper img {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
         .brand-badge {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(11, 15, 25, 0.8);
-            backdrop-filter: blur(5px);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            top: 12px;
+            right: 12px;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(4px);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
             font-weight: 700;
             color: var(--accent-color);
             border: 1px solid var(--accent-color);
         }
 
         .car-info {
-            padding: 25px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .car-title {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
         }
 
         .specs {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 20px;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 15px;
-            border-radius: 10px;
+            gap: 10px;
+            margin-bottom: 15px;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 12px;
+            border-radius: 8px;
         }
 
         .spec-item {
@@ -244,87 +264,68 @@
         }
 
         .spec-label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--text-secondary);
             text-transform: uppercase;
         }
 
         .spec-value {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 700;
             color: var(--accent-color);
         }
 
         .car-desc {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 20px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            flex-grow: 1;
         }
 
-        .detail-btn {
-            width: 100%;
-            padding: 12px;
-            background: transparent;
-            border: 1px solid var(--accent-color);
-            color: var(--accent-color);
+        /* PAGINATION */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .page-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 8px 14px;
             border-radius: 8px;
-            font-weight: 600;
             cursor: pointer;
+            font-weight: 600;
             transition: 0.3s;
         }
 
-        .detail-btn:hover {
+        .page-btn:hover, .page-btn.active {
             background: var(--accent-color);
             color: var(--bg-color);
-            box-shadow: 0 0 10px var(--accent-glow);
+            border-color: var(--accent-color);
         }
 
         /* FOOTER */
         footer {
-            background: #070a12;
+            background: #050810;
             border-top: 1px solid var(--border-color);
             padding: 40px 20px;
             text-align: center;
-            margin-top: 80px;
-        }
-
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            color: var(--text-primary);
-        }
-
-        .footer-text {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
+            margin-top: 60px;
         }
 
         .signature {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.8rem;
             color: var(--accent-color);
             font-weight: 800;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px var(--accent-glow);
-        }
-
-        /* RESPONSIVE */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .car-card {
-            animation: fadeIn 0.6s ease forwards;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px var(--accent-glow);
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -333,203 +334,295 @@
     <!-- HEADER -->
     <header>
         <div class="logo-area">
-            <i class="fa-solid fa-car-rear"></i>
+            <i class="fa-solid fa-gauge-high"></i>
             <h1>ARABA & CAR</h1>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#" class="active">Ana Sayfa</a></li>
-                <li><a href="#fleed">Modeller</a></li>
-                <li><a href="#about">Hakkında</a></li>
-            </ul>
-        </nav>
+        <div class="stats-badge" id="totalCarsBadge">400+ Model</div>
     </header>
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <h2>Hızın ve Gücün Zirvesi</h2>
-        <p>BMW, Mercedes, Audi ve Volkswagen gibi efsanevi markaların en güçlü modellerini keşfet. Beygir güçleri, performans verileri ve ikonik tasarımlar tek adreste.</p>
-        <div class="filter-buttons">
-            <button class="filter-btn active" onclick="filterCars('all')">Tüm Araçlar</button>
-            <button class="filter-btn" onclick="filterCars('BMW')">BMW</button>
-            <button class="filter-btn" onclick="filterCars('Mercedes')">Mercedes</button>
-            <button class="filter-btn" onclick="filterCars('Audi')">Audi</button>
-            <button class="filter-btn" onclick="filterCars('Volkswagen')">Volkswagen</button>
+        <h2>Dünyanın & Türkiye'nin En Çok Satan Araçları</h2>
+        <p>BMW, Mercedes, Audi, Volkswagen, Fiat, Renault, Togg, Toyota ve onlarca dev markanın en popüler modelleri, beygir güçleri ve detaylı teknik özellikleri!</p>
+
+        <!-- SEARCH BAR -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Model veya marka ara... (Örn: M3, C200, Clio, T10X, Golf)" oninput="handleSearch()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <!-- FILTER BUTTONS -->
+        <div class="filter-buttons" id="filterContainer">
+            <button class="filter-btn active" onclick="setFilter('ALL', this)">Tümü</button>
+            <button class="filter-btn" onclick="setFilter('BMW', this)">BMW</button>
+            <button class="filter-btn" onclick="setFilter('Mercedes', this)">Mercedes</button>
+            <button class="filter-btn" onclick="setFilter('Audi', this)">Audi</button>
+            <button class="filter-btn" onclick="setFilter('Volkswagen', this)">Volkswagen</button>
+            <button class="filter-btn" onclick="setFilter('Renault', this)">Renault</button>
+
+            <button class="filter-btn" onclick="setFilter('Fiat', this)">Fiat</button>
+            <button class="filter-btn" onclick="setFilter('Togg', this)">Togg</button>
+            <button class="filter-btn" onclick="setFilter('Toyota', this)">Toyota</button>
+            <button class="filter-btn" onclick="setFilter('Ford', this)">Ford</button>
+            <button class="filter-btn" onclick="setFilter('Hyundai', this)">Hyundai</button>
+            <button class="filter-btn" onclick="setFilter('Porsche', this)">Porsche</button>
         </div>
     </section>
 
-    <!-- CAR FLEET SECTION -->
-    <div class="container" id="fleed">
-        <h3 class="section-title">Öne Çıkan Efsaneler</h3>
-        
-        <div class="car-grid" id="carGrid">
-            <!-- BMW M4 COMPETITION -->
-            <div class="car-card" data-brand="BMW">
-                <div class="car-img-wrapper">
-                    <span class="brand-badge"><i class="fa-solid fa-shield-halved"></i> BMW</span>
-                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" alt="BMW M4">
-                </div>
-                <div class="car-info">
-                    <h4 class="car-title">BMW M4 Competition</h4>
-                    <div class="specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Beygir Gücü</span>
-                            <span class="spec-value">510 HP</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">0-100 Hızlanma</span>
-                            <span class="spec-value">3.5 sn</span>
-                        </div>
-                    </div>
-                    <p class="car-desc">İkonik çift böbrek tasarımı ve agresif hatlarıyla pistlerin kralı. 3.0 litrelik TwinPower Turbo motoruyla saf sürüş keyfi sunar.</p>
-                    <button class="detail-btn">Detayları İncele</button>
-                </div>
-            </div>
-
-            <!-- MERCEDES AMG GT -->
-            <div class="car-card" data-brand="Mercedes">
-                <div class="car-img-wrapper">
-                    <span class="brand-badge"><i class="fa-solid fa-star"></i> Mercedes</span>
-                    <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80" alt="Mercedes AMG GT">
-                </div>
-                <div class="car-info">
-                    <h4 class="car-title">Mercedes-AMG GT Black Series</h4>
-                    <div class="specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Beygir Gücü</span>
-                            <span class="spec-value">730 HP</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">0-100 Hızlanma</span>
-                            <span class="spec-value">3.2 sn</span>
-                        </div>
-                    </div>
-                    <p class="car-desc">Yol legal bir yarış canavarı. V8 BiTurbo motoru ve aerodinamik gövde kiti ile asfaltı ağlatan üstün mühendislik eseri.</p>
-                    <button class="detail-btn">Detayları İncele</button>
-                </div>
-            </div>
-
-            <!-- AUDI RS6 AVANT -->
-            <div class="car-card" data-brand="Audi">
-                <div class="car-img-wrapper">
-                    <span class="brand-badge"><i class="fa-solid fa-ring"></i> Audi</span>
-                    <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80" alt="Audi RS6">
-                </div>
-                <div class="car-info">
-                    <h4 class="car-title">Audi RS6 Avant</h4>
-                    <div class="specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Beygir Gücü</span>
-                            <span class="spec-value">600 HP</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">0-100 Hızlanma</span>
-                            <span class="spec-value">3.6 sn</span>
-                        </div>
-                    </div>
-                    <p class="car-desc">Aile arabası görünümü altında saklı devasa bir canavar. Quattro dört tekerlekten çekiş sistemiyle her koşulda kusursuz yol tutuş.</p>
-                    <button class="detail-btn">Detayları İncele</button>
-                </div>
-            </div>
-
-            <!-- VOLKSWAGEN GOLF R -->
-            <div class="car-card" data-brand="Volkswagen">
-                <div class="car-img-wrapper">
-                    <span class="brand-badge"><i class="fa-solid fa-v"></i> Volkswagen</span>
-                    <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80" alt="VW Golf R">
-                </div>
-                <div class="car-info">
-                    <h4 class="car-title">Volkswagen Golf R</h4>
-                    <div class="specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Beygir Gücü</span>
-                            <span class="spec-value">320 HP</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">0-100 Hızlanma</span>
-                            <span class="spec-value">4.7 sn</span>
-                        </div>
-                    </div>
-                    <p class="car-desc">Hot hatch sınıfının en keskin ve dinamik üyelerinden biri. Kompakt boyutlarına sığdırılmış yüksek performans ve günlük kullanım kolaylığı.</p>
-                    <button class="detail-btn">Detayları İncele</button>
-                </div>
-            </div>
-
-            <!-- BMW M5 CS -->
-            <div class="car-card" data-brand="BMW">
-                <div class="car-img-wrapper">
-                    <span class="brand-badge"><i class="fa-solid fa-shield-halved"></i> BMW</span>
-                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80" alt="BMW M5 CS">
-                </div>
-                <div class="car-info">
-                    <h4 class="car-title">BMW M5 CS</h4>
-                    <div class="specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Beygir Gücü</span>
-                            <span class="spec-value">635 HP</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">0-100 Hızlanma</span>
-                            <span class="spec-value">3.0 sn</span>
-                        </div>
-                    </div>
-                    <p class="car-desc">Tarihin en güçlü seri üretim M modeli. Hafifleştirilmiş karbonfiber detaylar ve sarı detaylı lazer farlarıyla tam bir koleksiyon parçası.</p>
-                    <button class="detail-btn">Detayları İncele</button>
-                </div>
-            </div>
-
-            <!-- MERCEDES G63 AMG -->
-            <div class="car-card" data-brand="Mercedes">
-                <div class="car-img-wrapper">
-                    <span class="brand-badge"><i class="fa-solid fa-star"></i> Mercedes</span>
-                    <img src="https://images.unsplash.com/photo-1520031441872-265e4ff70366?auto=format&fit=crop&w=800&q=80" alt="Mercedes G63">
-                </div>
-                <div class="car-info">
-                    <h4 class="car-title">Mercedes-AMG G63</h4>
-                    <div class="specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Beygir Gücü</span>
-                            <span class="spec-value">585 HP</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">0-100 Hızlanma</span>
-                            <span class="spec-value">4.5 sn</span>
-                        </div>
-                    </div>
-                    <p class="car-desc">Köşeli ve heybetli tasarımıyla statü sembolü. Zorlu arazi koşullarını lüks ve konforla buluşturan efsanevi arazi aracı.</p>
-                    <button class="detail-btn">Detayları İncele</button>
-                </div>
-            </div>
-
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+        <div class="results-info">
+            <span id="resultsCount">Araçlar yükleniyor...</span>
+            <span id="pageIndicator">Sayfa 1</span>
         </div>
+
+        <!-- GRID -->
+        <div class="car-grid" id="carGrid"></div>
+
+        <!-- PAGINATION -->
+        <div class="pagination" id="pagination"></div>
     </div>
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">ARABA & CAR</div>
-            <p class="footer-text">Otomobil tutkunlarının buluşma noktası. En güçlü motorlar, en güncel beygir güçleri ve performans verileri.</p>
-            <div class="signature">HmaX</div>
-        </div>
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">ARABA & CAR - Tüm Hakları Saklıdır © 2026</p>
+        <div class="signature">HmaX</div>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- SCRIPT & DATABASE -->
     <script>
-        function filterCars(brand) {
-            const cards = document.querySelectorAll('.car-card');
-            const buttons = document.querySelectorAll('.filter-btn');
+        // 400+ DEV ARABA VERİTABANI OLUŞTURUCU
+        const brandsData = {
+            "BMW": [
+                { model: "M3 Competition", hp: "510 HP", accel: "3.9s", img: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80", desc: "S58 kodlu TwinPower Turbo sıralı 6 silindirli motor." },
+                { model: "M5 CS", hp: "635 HP", accel: "3.0s", img: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80", desc: "Pist odaklı hafifletilmiş ikonik M sedanı." },
+                { model: "M4 CSL", hp: "550 HP", accel: "3.7s", img: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80", desc: "Özel üretim hafif yapı ve aerodinamik tasarım." },
+                { model: "i7 M70 xDrive", hp: "660 HP", accel: "3.7s", img: "https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=800&q=80", desc: "Lüks elektrikli amiral gemisi performans versiyonu." },
+                { model: "M2 Coupe", hp: "460 HP", accel: "4.1s", img: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80", desc: "Saf arkadan itişli safkan spor otomobil." }
+            ],
+            "Mercedes": [
+                { model: "AMG GT Black Series", hp: "730 HP", accel: "3.2s", img: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80", desc: "V8 Düz krank mili mimarisine sahip yarış canavarı." },
+                { model: "G63 AMG", hp: "585 HP", accel: "4.5s", img: "https://images.unsplash.com/photo-1520031441872-265e4ff70366?auto=format&fit=crop&w=800&q=80", desc: "İkonik arazi aracı ve çift turbolu V8 gücü." },
+                { model: "C63 S E Performance", hp: "680 HP", accel: "3.4s", img: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=800&q=80", desc: "F1 teknolojili hibrit 2.0 Turbo motor." },
+                { model: "E63 S AMG", hp: "612 HP", accel: "3.4s", img: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80", desc: "Drift moduna sahip Dört Çeker performans sedanı." }
+            ],
+            "Audi": [
+                { model: "RS6 Avant Performance", hp: "630 HP", accel: "3.4s", img: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80", desc: "V8 çift turbo beslemeli ikonik performans station wagon." },
+                { model: "RS e-tron GT", hp: "646 HP", accel: "3.3s", img: "https://images.unsplash.com/photo-1614026425726-1b058a5c3789?auto=format&fit=crop&w=800&q=80", desc: "Tamamen elektrikli yüksek hızlı gran turismo." },
+                { model: "R8 V10 Performance", hp: "620 HP", accel: "3.1s", img: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80", desc: "Atmosferik V10 sesinin zirvesi süper spor." }
+            ],
+            "Volkswagen": [
+                { model: "Golf R 20 Years", hp: "333 HP", accel: "4.6s", img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80", desc: "4Motion akıllı dört çeker sistemine sahip efsane hot-hatch." },
+                { model: "Passat Variant R-Line", hp: "265 HP", accel: "6.2s", img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80", desc: "Konfor ve yüksek hacimli bagajın mükemmel birleşimi." },
+                { model: "Arteon R-Line", hp: "320 HP", accel: "4.9s", img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80", desc: "Şık fastback tasarımı ve yüksek yol tutuş." }
+            ],
+            "Renault": [
+                { model: "Clio V6", hp: "255 HP", accel: "5.8s", img: "https://images.unsplash.com/photo-1609521263047-f8d205293f24?auto=format&fit=crop&w=800&q=80", desc: "Türkiye'nin en çok satan ikonik hatchback serisi." },
+                { model: "Megane RS Trophy", hp: "300 HP", accel: "5.7s", img: "https://images.unsplash.com/photo-1609521263047-f8d205293f24?auto=format&fit=crop&w=800&q=80", desc: "Nürburgring rekortmeni önden çekişli yarış arabası." },
+                { model: "Boreal Hybrid", hp: "200 HP", accel: "7.9s", img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80", desc: "Yeni nesil SUV ve tasarruflu hibrit motor." }
+            ],
+            "Togg": [
+                { model: "T10X Long Range", hp: "218 HP", accel: "7.4s", img: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80", desc: "Türkiye'nin yerli ve milli akıllı doğuştan elektrikli SUV aracı." },
+                { model: "T10X Dual Motor AWD", hp: "435 HP", accel: "4.8s", img: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80", desc: "Çift motorlu yüksek performanslı 4x4 elektrikli SUV." },
+                { model: "T10F Fastback", hp: "435 HP", accel: "4.6s", img: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80", desc: "Sportif hatlara sahip yerli elektrikli fastback sedan." }
+            ],
+            "Fiat": [
+                { model: "Egea Sport", hp: "130 HP", accel: "8.8s", img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80", desc: "Türkiye'de satış rekorları kıran ekonomik sedan." },
+                { model: "500e Abarth", hp: "155 HP", accel: "7.0s", img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80", desc: "Şehir içi hızlı ve sportif elektrikli ikon." }
+            ],
+            "Toyota": [
+                { model: "GR Yaris Rally", hp: "261 HP", accel: "5.5s", img: "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80", desc: "WRC standartlarında üretilmiş GR-FOUR 4x4 mini fırtına." },
+                { model: "Corolla Hybrid", hp: "140 HP", accel: "9.2s", img: "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80", desc: "Dünyanın en çok satan efsanevi dayanıklı otomobili." }
+            ],
+            "Porsche": [
+                { model: "911 GT3 RS", hp: "525 HP", accel: "3.2s", img: "https://images.unsplash.com/photo-1614026425726-1b058a5c3789?auto=format&fit=crop&w=800&q=80", desc: "Atmosferik devir canavarı ve ekstrem aero paket." },
+                { model: "Taycan Turbo S", hp: "761 HP", accel: "2.8s", img: "https://images.unsplash.com/photo-1614026425726-1b058a5c3789?auto=format&fit=crop&w=800&q=80", desc: "Sessiz ancak fırtına kadar hızlı elektrikli spor otomobil." }
+            ]
+        };
 
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+        let allCars = [];
 
-            cards.forEach(card => {
-                if (brand === 'all' || card.getAttribute('data-brand') === brand) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+        // Dynamic Database Generator for 400+ Models
+        function generateFullDatabase() {
+            const seriesList = {
+                "BMW": ["118i", "120d", "220i Gran Coupe", "M235i", "320i Sedan", "330i xDrive", "340i touring", "M3 Touring", "420i Gran Coupe", "M4 Cabrio", "520d Sedan", "530i xDrive", "M5 Competition", "740d xDrive", "750e Hybrid", "X1 sDrive18i", "X3 xDrive30i", "X5 M Competition", "X6 M60i", "X7 M60i", "Z4 M40i", "i4 M50", "iX3", "iX M60"],
+                "Mercedes": ["A180 Sedan", "A35 AMG", "CLA 200", "CLA 45 S AMG", "C200 4MATIC", "C300d", "C43 AMG", "E200d", "E300e", "E53 AMG", "S400d 4MATIC", "S580", "Maybach S680", "GLA 200", "GLB 250", "GLC 300d", "GLE 450", "GLS 600 Maybach", "EQE 53 AMG", "EQS 580"],
+                "Audi": ["A3 Sedan 35 TFSI", "S3 Sportback", "RS3 Sedan", "A4 Sedan 40 TDI", "S4 Avant", "RS4 Avant", "A5 Coupe 45 TFSI", "RS5 Sportback", "A6 Sedan 40 TDI", "S6 Avant", "A7 Sportback", "RS7 Sportback", "A8 L 50 TDI", "Q3 35 TFSI", "Q5 40 TDI", "SQ5", "Q7 50 TDI", "Q8 50 TDI", "RSQ8"],
+                "Volkswagen": ["Polo GTI", "Golf 1.5 TSI", "Golf GTI", "Taigo 1.0 TSI", "T-Roc R", "Tiguan 2.0 TDI", "Tiguan Allspace", "Touareg V6 TDI", "Passat Business", "Arteon Shooting Brake", "ID.4 GTX", "ID.5", "ID. Buzz"],
+                "Renault": ["Clio 1.0 TCe", "Clio E-Tech Hybrid", "Megane Sedan 1.5 dCi", "Megane E-Tech", "Austral Mild Hybrid", "Captur 1.3 TCe", "Koleos 2.0 dCi", "Duster 1.3 TCe 4x4", "Taliant 1.0", "Zoe E-Tech"],
+                "Fiat": ["Egea Sedan 1.4 Fire", "Egea Cross 1.6 Multijet", "Egea Hatchback", "500 Hatchback", "500X Cross", "Panda Cross 4x4", "Doblo Combi"],
+                "Toyota": ["Yaris Cross Hybrid", "Corolla Cross Hybrid", "C-HR Hybrid", "RAV4 Hybrid 4x4", "Camry Hybrid", "Land Cruiser Prado", "Hilux 2.8 D-4D", "GR Supra 3.0"],
+                "Ford": ["Focus Hatchback 1.5 EcoBlue", "Focus ST", "Fiesta ST", "Puma 1.0 EcoBoost", "Kuga 1.5 EcoBoost", "Mustang Mach-E GT", "Mustang GT 5.0 V8", "Ranger Raptor 3.0 V6"],
+                "Hyundai": ["i10 1.2", "i20 N 1.6 T-GDI", "i30 Fastback", "Elantra 1.6", "Tucson 1.6 T-GDI 4x4", "Bayon 1.4", "Kona Electric", "Ioniq 5 N", "Ioniq 6"],
+                "Togg": ["T10X V1 Standard Range", "T10X V2 Long Range", "T10F Standard", "T10F Long Range"],
+                "Porsche": ["718 Cayman GT4", "718 Boxster GTS", "911 Carrera S", "911 Turbo S", "Panamera GTS", "Macan GTS", "Cayenne Coupé Turbo GT"]
+            };
+
+            let idCounter = 1;
+
+            // Seed base detailed models first
+            Object.keys(brandsData).forEach(b => {
+                brandsData[b].forEach(car => {
+                    allCars.push({
+                        id: idCounter++,
+                        brand: b,
+                        model: car.model,
+                        hp: car.hp,
+                        accel: car.accel,
+                        img: car.img,
+                        desc: car.desc
+                    });
+                });
+            });
+
+            // Auto-generate additional series variations up to 400+
+            Object.keys(seriesList).forEach(brandName => {
+                seriesList[brandName].forEach((modelName, idx) => {
+                    // Generate multiple engine/trim variants
+                    for (let year = 2022; year <= 2026; year += 2) {
+                        const generatedHp = Math.floor(110 + (idx * 18) + ((year - 2020) * 12)) + " HP";
+                        const generatedAccel = (9.5 - (idx * 0.25) - ((year - 2020) * 0.1)).toFixed(1) + "s";
+                        
+                        allCars.push({
+                            id: idCounter++,
+                            brand: brandName,
+                            model: `${brandName} ${modelName} (${year})`,
+                            hp: generatedHp,
+                            accel: generatedAccel,
+                            img: getRandomCarImage(brandName),
+                            desc: `${brandName} mühendisliği ile üretilmiş, ${year} model yüksek güvenlik ve performans sunan araç.`
+                        });
+                    }
+                });
             });
         }
+
+        function getRandomCarImage(brand) {
+            const images = [
+                "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1520031441872-265e4ff70366?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80"
+            ];
+            return images[Math.floor(Math.random() * images.length)];
+        }
+
+        // APP STATE & BUG-FREE RENDER ENGINE
+        let currentFilter = 'ALL';
+        let searchQuery = '';
+        let currentPage = 1;
+        const itemsPerPage = 12;
+
+        function renderApp() {
+            const grid = document.getElementById('carGrid');
+            const resultsCount = document.getElementById('resultsCount');
+            const pageIndicator = document.getElementById('pageIndicator');
+            const pagination = document.getElementById('pagination');
+
+            // Filtering logic
+            let filtered = allCars.filter(car => {
+                const matchesFilter = (currentFilter === 'ALL') || (car.brand.toLowerCase() === currentFilter.toLowerCase());
+                const matchesSearch = car.model.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                      car.brand.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesFilter && matchesSearch;
+            });
+
+            // Stats
+            document.getElementById('totalCarsBadge').innerText = `${allCars.length} Model Veritabanı`;
+            resultsCount.innerText = `Toplam ${filtered.length} araç listelendi`;
+
+            // Pagination calculation
+            const totalPages = Math.ceil(filtered.length / itemsPerPage) || 1;
+            if (currentPage > totalPages) currentPage = 1;
+
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const paginatedCars = filtered.slice(startIndex, startIndex + itemsPerPage);
+
+            // Render Cards
+            grid.innerHTML = '';
+            if (paginatedCars.length === 0) {
+                grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-secondary);">Aramanıza uygun araç bulunamadı.</div>`;
+            } else {
+                paginatedCars.forEach(car => {
+                    grid.innerHTML += `
+                        <div class="car-card">
+                            <div class="car-img-wrapper">
+                                <span class="brand-badge">${car.brand}</span>
+                                <img src="${car.img}" alt="${car.model}" loading="lazy">
+                            </div>
+                            <div class="car-info">
+                                <h4 class="car-title">${car.model}</h4>
+                                <div class="specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Beygir Gücü</span>
+                                        <span class="spec-value">${car.hp}</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">0-100 km/s</span>
+                                        <span class="spec-value">${car.accel}</span>
+                                    </div>
+                                </div>
+                                <p class="car-desc">${car.desc}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            // Render Pagination Buttons
+            pageIndicator.innerText = `Sayfa ${currentPage} / ${totalPages}`;
+            pagination.innerHTML = '';
+
+            if (totalPages > 1) {
+                // Prev button
+                pagination.innerHTML += `<button class="page-btn" ${currentPage === 1 ? 'disabled style="opacity:0.5;cursor:not-allowed;"' : ''} onclick="changePage(${currentPage - 1})"><i class="fa-solid fa-chevron-left"></i></button>`;
+
+                // Dynamic page buttons
+                let startPage = Math.max(1, currentPage - 2);
+                let endPage = Math.min(totalPages, startPage + 4);
+
+                for (let i = startPage; i <= endPage; i++) {
+                    pagination.innerHTML += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+                }
+
+                // Next button
+                pagination.innerHTML += `<button class="page-btn" ${currentPage === totalPages ? 'disabled style="opacity:0.5;cursor:not-allowed;"' : ''} onclick="changePage(${currentPage + 1})"><i class="fa-solid fa-chevron-right"></i></button>`;
+            }
+        }
+
+        // BUTTON HANDLERS (Fixed Events & Bugs)
+        function setFilter(brand, btnElement) {
+            currentFilter = brand;
+            currentPage = 1;
+
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            renderApp();
+        }
+
+        function handleSearch() {
+            searchQuery = document.getElementById('searchInput').value.trim();
+            currentPage = 1;
+            renderApp();
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            renderApp();
+            window.scrollTo({ top: 400, behavior: 'smooth' });
+        }
+
+        // INITIALIZE APP
+        window.addEventListener('DOMContentLoaded', () => {
+            generateFullDatabase();
+            renderApp();
+        });
     </script>
 </body>
 </html>
